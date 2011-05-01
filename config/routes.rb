@@ -1,4 +1,6 @@
 Wisbit::Application.routes.draw do
+  get "read/index"
+
   get "main/index"
 
   resources :categories

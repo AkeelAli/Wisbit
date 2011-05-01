@@ -1,0 +1,15 @@
+<h1>Read Quotes</h1>
+
+<% if !@quotes.empty? %>
+
+	<% if params[:current_q] %>
+		<%= @quotes[params[:current_q].to_i].quote %>
+		
+	<% else %>
+		<%= @quotes[0].quote %>
+		<%= link_to "Next ->", read_index_path(:current_q => 1) %>
+	<% end %>
+
+<% else %>
+	No Quotes to display
+<% end %>
