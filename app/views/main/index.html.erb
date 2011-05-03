@@ -1,4 +1,4 @@
 <h1>Wisbits Menu</h1>
-	<%= link_to "Read Wisbits", categories_path %>
-	<%=	link_to "Mash Wisbits", categories_path %>
+	<%= link_to "Read Wisbits", categories_path(:option=>'read'),   %>
+	<%=	link_to "Mash Wisbits", categories_path(:option=>'mash')  %>
 	<%=	link_to "Submit Wisbits", new_quote_path %>

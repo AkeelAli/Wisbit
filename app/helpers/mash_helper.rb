@@ -1,0 +1,2 @@
+module MashHelper
+end
