@@ -14,7 +14,7 @@
 
 	<% @categories.each do |category| %>
   	<tr>
-    	<td><%= link_to category.name, mash_url(:cat=>category.id)  %></td>
+    	<td><%= link_to category.name, mash_url(:cat=>category.id, :i=>0, :win=>0)  %></td>
 		</tr>
 	<% end %>
 	</table>

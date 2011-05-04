@@ -20,8 +20,8 @@ Wisbit::Application.routes.draw do
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
 	
-	match 'mash/index?category=:cat' => 'mash#index', :as => :mash
-
+	match 'mash/index?category=:cat&index=:i&win=:win' => 'mash#index', :as => :mash
+	
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 

@@ -1,10 +1,13 @@
 <h1>Let's Mash</h1>
+<% if flash[:notice] %>
+	<%= flash[:notice] %>
+<% else %>
 
-<table>
+<table border="1" width="50%">
 
 <tr>
-	<td><%= @quotes[0].quote  %> </td>
-	<td><%= @quotes[1].quote %> </td>
+	<td width="50%"><div id="quote1"><%= link_to session[:matched_quotes][@index][:quote], mash_url(:cat=>@category, :i=>@index+2,:win=>1)  %></div> </td>
+	<td width="50%"><div id="quote2"><%= link_to session[:matched_quotes][@index+1][:quote], mash_url(:cat=>@category, :i=>@index+2,:win=>2) %></div> </td>
 </tr>
 
 <tr>
@@ -21,3 +24,5 @@
 </tr>
 
 </table>
+
+<% end %>
