@@ -46,16 +46,18 @@ class MashController < ApplicationController
 	end
   
 	def index
-			@category=params[:category]
+			#extract request args
+			@category=params[:category]?params[:category]:1
+			@index=params[:index]?params[:index]:"0"
+			@win=params[:win]?params[:win]:0
 			
-			if (params[:index])
-				@index=params[:index].to_i
-			else
-				@index=0
-			end
-			
+			@category=@category.to_i
+			@index=@index.to_i
+			@win=@win.to_i
+
 			if @index==0
 				#first round of mashing: need to setup session
+
 
 				@quotes=Category.find(@category).quotes.select("id, matchups, score, quote").order("matchups")
 				
@@ -76,9 +78,9 @@ class MashController < ApplicationController
 				q2.matchups+=1
 					
 				if @win==1
-					q1[:score]+=(q2[:score]+1)/q1[:score]
+					q1.score+=(q2.score+1)/q1.score
 				elsif @win==2
-					q2[:score]+=(q1[:score]+1)/q2[:score]
+					q2.score+=(q1.score+1)/q2.score
 				end
 					
 				q1.save

@@ -25,8 +25,8 @@ class QuotesController < ApplicationController
   # GET /quotes/new.xml
   def new
     @quote = Quote.new
-
-    respond_to do |format|
+    
+		respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @quote }
     end
@@ -41,6 +41,9 @@ class QuotesController < ApplicationController
   # POST /quotes.xml
   def create
     @quote = Quote.new(params[:quote])
+		#default value (ideally should be in migration)
+		@quote.matchups=0
+		@quote.score=0
 
     respond_to do |format|
       if @quote.save
