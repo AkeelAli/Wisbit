@@ -31,7 +31,7 @@ class MashController < ApplicationController
 			s2=n-left_shifts
 			
 			while (s1<s2) do
-				if (a1[s1][:matchups]+a2[s1][:matchups]) <= (a1[s2][:matchups]+a2[s2][:matchups])
+				if (a1[s1].matchups+a2[s1].matchups) <= (a1[s2].matchups+a2[s2].matchups)
 					result.push(a1[s1],a2[s1])
 					s1+=1
 				else
@@ -57,11 +57,11 @@ class MashController < ApplicationController
 			if @index==0
 				#first round of mashing: need to setup session
 
-				@quotes=Category.find(@category).quotes
-				@quotes.sort! {|a,b| a.matchups <=> b.matchups}
-					
-				@matched_quotes=matchup(@quotes)
-
+				@quotes=Category.find(@category).quotes.select("id, matchups, score, quote").order("matchups")
+				
+				@quotes_all=@quotes.all
+				@matched_quotes=matchup(@quotes_all)
+				
 				session[:matched_quotes]=@matched_quotes
 				session[:matched_quotes_size]=@matched_quotes.size
 
@@ -69,16 +69,15 @@ class MashController < ApplicationController
 				#subsequent rounds: need to save results from previous round
 
 				q1=Quote.find(session[:matched_quotes][@index-2].id)
-				q1[:matchups]+=1
+				q1.matchups+=1
 					
 					
 				q2=Quote.find(session[:matched_quotes][@index-1].id)
-				q2[:matchups]+=1
+				q2.matchups+=1
 					
-					
-				if @win=1
+				if @win==1
 					q1[:score]+=(q2[:score]+1)/q1[:score]
-				elsif @win=2
+				elsif @win==2
 					q2[:score]+=(q1[:score]+1)/q2[:score]
 				end
 					
