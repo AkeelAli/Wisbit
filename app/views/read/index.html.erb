@@ -1,15 +1,14 @@
 <h1>Read Quotes</h1>
 
-<% if !@quotes.empty? %>
+<% if session[:quotes] and session[:quotes].size>@index and @index>=0 %>
 
-	<% if params[:current_q] %>
-		<%= @quotes[params[:current_q].to_i].quote %>
+	<%= link_to "<- Prev", read_index_path(:index=>@index-1) %>
+
+	<%= session[:quotes][@index].quote %>
 		
-	<% else %>
-		<%= @quotes[0].quote %>
-		<%= link_to "Next ->", read_index_path(:current_q => 1) %>
-	<% end %>
+	<%= link_to "Next ->", read_index_path(:index=>@index+1) %>
+	
 
 <% else %>
-	No Quotes to display
+	No Quotes to display: Either reached the end of list or invalid URL?
 <% end %>

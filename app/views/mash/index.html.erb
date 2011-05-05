@@ -1,13 +1,13 @@
-<h1>Let's Mash</h1>
+<h1>Wisbit Mash</h1>
 <% if flash[:notice] %>
 	<%= flash[:notice] %>
 <% else %>
 
-<table border="1" width="50%">
+<table>
 
 <tr>
-	<td width="50%"><div id="quote1"><%= link_to session[:matched_quotes][@index].quote, mash_url(:cat=>@category, :i=>@index+2,:win=>1)  %></div> </td>
-	<td width="50%"><div id="quote2"><%= link_to session[:matched_quotes][@index+1].quote, mash_url(:cat=>@category, :i=>@index+2,:win=>2) %></div> </td>
+	<td><div id="quote1"><%= link_to session[:matched_quotes][@index].quote, mash_index_path(:category=>@category, :index=>@index+2,:win=>1)  %></div> </td>
+	<td><div id="quote2"><%= link_to session[:matched_quotes][@index+1].quote, mash_index_path(:category=>@category, :index=>@index+2,:win=>2) %></div> </td>
 </tr>
 
 <tr>
@@ -16,11 +16,11 @@
 </tr>
 
 <tr>
-	<td colspan="2">Skip</td>
+	<td colspan="2"><div id="skip"><%= link_to "Skip", mash_index_path(:category=>@category, :index=>@index+2,:win=>0) %></div></td>
 </tr>
 
 <tr>
-	<td colspan="2">Exit</td>
+	<td colspan="2"><div id="exit"><%= link_to "Exit", "/" %> </td>
 </tr>
 
 </table>
