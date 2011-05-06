@@ -1,4 +1,34 @@
-<h1>Wisbits Menu</h1>
-	<%= link_to "Read Wisbits", categories_path(:option=>'read'),   %>
-	<%=	link_to "Mash Wisbits", categories_path(:option=>'mash')  %>
-	<%=	link_to "Submit Wisbits", new_quote_path %>
+<div id="main_page">
+	<div id="header">
+		<h1>Wisbits Menu</h1>
+	</div>
+	
+	<div id="content">
+	<div id="intro">
+		<div id="top"></div>
+		<div id="mid">
+			<p> Welcome, this is the wisbit plateform here to serve your needs</p>
+		</div>
+		<div id="bottom"></div>
+	</div>
+	<ul>
+		<li><%= link_to "Read Wisbits", categories_path(:option=>'read')  %></li>
+		<li><%=	link_to "Mash Wisbits", categories_path(:option=>'mash')  %></li>
+		<li><%=	link_to "Submit Wisbits", new_quote_path %></li>
+	</ul>
+	</div>
+
+	<div id="footer">
+		
+	
+		<div id="share">
+			<div id="twitter"><a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical"><img src="../images/share/twitter.png" /></a></div>
+			<div id="email"><a href="mailto:?body=http%3A%2F%2Fakeelali.com%2F%3Fp%3D917&amp;subject=Wisbit+Hiatus"><img src="../images/share/email.png" /></a></div>
+			<div id="facebook"><img src="../images/share/facebook.png" /></div>
+		</div>
+		
+		<div id="credits>
+			Akeel Ali (logo, twitter or w/e)
+		</div>
+	</div>
+</div>

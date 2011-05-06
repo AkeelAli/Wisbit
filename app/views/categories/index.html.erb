@@ -1,26 +1,24 @@
-<h1>Listing categories</h1>
+<div id="cat_page">
+	<div id="header">
+		<h1>Choose a Category</h1>
+	</div>
+	<div id="content">
+		<% if not params[:option] %>
+			TODO: Redirect to main page from controller
+		<% else %>
+			
+			<% @categories.each do |category| %>
+				
+				<div id="category"><%= link_to category.name, params[:option]=="mash"?mash_index_path(:category=>category.id, :index=>0, :win=>0):read_index_path(:category=>category.id, :index=>0)  %></div>
+				
+			<% end %>
+			
 
-<% if not params[:option] %>
-	TODO: Redirect to main page from controller
-<% else %>
+		<% end %>
+	</div>
+	
+	<div id="footer">
+	
+	</div>
 
-	<table>
-  	<tr>
-    	<th>Name</th>
-    	<th></th>
-    	<th></th>
-    	<th></th>
-  	</tr>
-
-	<% @categories.each do |category| %>
-  	<tr>
-    	<td><%= link_to category.name, params[:option]=="mash"?mash_index_path(:category=>category.id, :index=>0, :win=>0):read_index_path(:category=>category.id, :index=>0)  %></td>
-		</tr>
-	<% end %>
-	</table>
-
-	<br />
-
-	<%= link_to 'New Category', new_category_path %>
-
-<% end %>
+</div>

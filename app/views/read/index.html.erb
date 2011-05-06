@@ -1,14 +1,35 @@
-<h1>Read Quotes</h1>
-
-<% if session[:quotes] and session[:quotes].size>@index and @index>=0 %>
-
-	<%= link_to "<- Prev", read_index_path(:index=>@index-1) %>
-
-	<%= session[:quotes][@index].quote %>
-		
-	<%= link_to "Next ->", read_index_path(:index=>@index+1) %>
+<div id="read_page">
+	<div id="header">
+		<h1>Read Quotes</h1>
+	</div>
 	
+	<div id="content">
+		<% if session[:quotes] and session[:quotes].size>@index and @index>=0%>
+			
+			<div id="navigate">
+				<div id="left"><%= (@index>0)?(link_to image_tag("../images/slide_left.png"), read_index_path(:index=>@index-1)):() %></div>
+				<div id="right"><%= (@index<session[:quotes].size-1)?(link_to image_tag("../images/slide_right.png"), read_index_path(:index=>@index+1)):() %></div>
+			</div>
+		
+		
+			<div id="quote">
+				<div id="top"></div>
+				<div id="mid"><%= session[:quotes][@index].quote %></div>
+				<div id="bottom"></div>
+			</div>
+			
 
-<% else %>
-	No Quotes to display: Either reached the end of list or invalid URL?
-<% end %>
+			
+			<div id="exit">
+				<%= link_to "Exit", "/" %>
+			</div>
+
+		<% else %>
+			No Quotes to display: Either reached the end of list or invalid URL?
+		<% end %>
+	</div>
+	
+	<div id="footer">
+	
+	</div>
+</div>
