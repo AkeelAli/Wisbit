@@ -46,53 +46,81 @@ class MashController < ApplicationController
 	end
   
 	def index
-			#extract request args
-			@category=params[:category]?params[:category]:1
-			@index=params[:index]?params[:index]:"0"
-			@win=params[:win]?params[:win]:0
+			if params[:category]
+				#setup at start of round
+				reset_session
+				object_ids=Category.find(params[:category]).quotes.select("id").all
+				ids=[]
+				object_ids.each do |object|
+					ids.push(object.id)
+				end
+				session[:quote_ids]=ids
+				session[:size]=ids.count
+				
+				@start=1
+			end
 			
-			@category=@category.to_i
-			@index=@index.to_i
-			@win=@win.to_i
-
-			if @index==0
-				#first round of mashing: need to setup session
-
-
-				@quotes=Category.find(@category).quotes.select("id, matchups, score, quote").order("matchups")
+			if params[:win]
+				#if there was a previous round, then update stats		
+				win=params[:win]
+				win=win.to_i
 				
-				@quotes_all=@quotes.all
-				@matched_quotes=matchup(@quotes_all)
-				
-				session[:matched_quotes]=@matched_quotes
-				session[:matched_quotes_size]=@matched_quotes.size
-
-			elsif @index>=2 and @index<=(session[:matched_quotes_size]-2)
-				#subsequent rounds: need to save results from previous round
-
-				q1=Quote.find(session[:matched_quotes][@index-2].id)
+				q1=Quote.find(session[:id1])
 				q1.matchups+=1
 					
-					
-				q2=Quote.find(session[:matched_quotes][@index-1].id)
+				q2=Quote.find(session[:id2])
 				q2.matchups+=1
 					
-				if @win==1
-					q1.score+=(q2.score+1)/q1.score
-				elsif @win==2
-					q2.score+=(q1.score+1)/q2.score
+				if win==1
+					q1.score+=(q2.score+1)/(q1.score+1)
+				elsif win==2
+					q2.score+=(q1.score+1)/(q2.score+1)
 				end
 					
 				q1.save
 				q2.save
-				
-			else
-				#index error
-			
-				flash[:notice]="Error: index cannot be = #{@index}"
 			end
+
+			quote_ids=session[:quote_ids]
+			size=session[:size]
+			
+			rand=rand(size)
+			q1=Quote.find(quote_ids[rand])
+			q2=q1
+	
+			while (q1.id==q2.id) do
+				rand=rand(size)
+				q2=Quote.find(quote_ids[rand])
+			end
+			
+			session[:id1]=q1.id
+			session[:id2]=q2.id
+
+			@quote1_text=q1.quote
+			@quote2_text=q2.quote
+
+
 	
 	
+			#padding to balance both quotes
+			#length1=session[:matched_quotes][@index].quote.length
+			#length2=session[:matched_quotes][@index+1].quote.length
+			#diff_h=(length1-length2).abs/2
+
+			#if (length1>length2)
+				#@quote2_text="&nbsp; ".html_safe*diff_h+session[:matched_quotes][@index+1].quote+"&nbsp; ".html_safe*diff_h
+				#@quote1_text=session[:matched_quotes][@index].quote
+			#else
+				#@quote1_text="&nbsp; ".html_safe*diff_h+session[:matched_quotes][@index].quote+"&nbsp; ".html_safe*diff_h
+				#@quote2_text=session[:matched_quotes][@index+1].quote
+			#end
+
+			
+			#social bar
+			#social_url="http://www.google.com"
+			#social_title="title"
+			#@quote1_social="<a href=\"http://twitter.com/share\" class=\"twitter-share-button\" data-url=\"".html_safe+social_url+"\" data-text=\"".html_safe+social_title+"\" data-count=\"horizontal\">Tweet</a><script type=\"text/javascript\" src=\"http://platform.twitter.com/widgets.js\"></script>".html_safe
+			#@quote1_social+="<iframe style=\" display:inline; margin-left:200px; padding:0;\" src=\"http://www.facebook.com/plugins/like.php?href=url.goes%2Fhere&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21\" scrolling=\"no\" frameborder=\"0\" style=\"border:none; overflow:hidden; width:450px; height:21px;\" allowTransparency=\"true\"></iframe>".html_safe
 	end
 
 end

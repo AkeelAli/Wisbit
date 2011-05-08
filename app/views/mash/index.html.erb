@@ -1,28 +1,54 @@
-<h1>Wisbit Mash</h1>
-<% if flash[:notice] %>
-	<%= flash[:notice] %>
-<% else %>
 
-<table>
+<div id="mash_page">
+	<div id="header">
+		<h1>Wisbit Mash</h1>
+	</div>
+	<div id="content">	
+		<% if flash[:notice] %>
+			<div id="notice"><%= flash[:notice] %></div>
+		<% else %>
+		<% if @start %>
+			<div id="instructions">
+				Choose the wisbit you like most
+			</div>
+		<% end %>
+		<table>
+			<tr>
+				<td style="vertical-align:bottom">
+				<div id="quote">
+					<div id="top"></div>
+					<div id="mid"><%= link_to @quote1_text, mash_index_path(:win=>1)  %></div> 
+					<div id="bottom"></div>
+				</div>
+				</td>
+				<td style="vertical-align:bottom"> 
+				<div id="quote">
+					<div id="top"></div>
+					<div id="mid"><%= link_to @quote2_text, mash_index_path(:win=>2) %></div> 
+					<div id="bottom"></div>
+				</div>
+				</td>
+			</tr>
 
-<tr>
-	<td><div id="quote1"><%= link_to session[:matched_quotes][@index].quote, mash_index_path(:category=>@category, :index=>@index+2,:win=>1)  %></div> </td>
-	<td><div id="quote2"><%= link_to session[:matched_quotes][@index+1].quote, mash_index_path(:category=>@category, :index=>@index+2,:win=>2) %></div> </td>
-</tr>
+			<tr>
+				<td><%= @quote1_social %></td>
+				<td><%= @quote2_social %></td>
+			</tr>
 
-<tr>
-	<td>Share</td>
-	<td>Share</td>
-</tr>
+			<tr>
+				<td colspan="2"><div id="skip"><%= link_to image_tag("../images/slide_right.png", :title=>"Skip"), mash_index_path(:category=>@category, :win=>0) %></div></td>
+			</tr>
 
-<tr>
-	<td colspan="2"><div id="skip"><%= link_to "Skip", mash_index_path(:category=>@category, :index=>@index+2,:win=>0) %></div></td>
-</tr>
+			<tr>
+				<td colspan="2"><div id="exit"><%= link_to "Exit", "/" %> </td>
+			</tr>
 
-<tr>
-	<td colspan="2"><div id="exit"><%= link_to "Exit", "/" %> </td>
-</tr>
+		</table>
 
-</table>
-
-<% end %>
+		<% end %>
+	</div>
+	
+	<div id="footer">
+	
+	</div>
+</div>

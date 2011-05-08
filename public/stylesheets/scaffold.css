@@ -54,6 +54,58 @@
 		top:498px;
 	}	
 	
+	#quote #top{
+		background: url(../images/depression_top.png) no-repeat;
+		width: 452px;
+		height: 4px;
+		margin: auto;
+		margin-top: 100px;
+	}
+	 #quote #mid{
+		background: url(../images/depression_mid.png) ;
+		width: 452px;	
+		margin: auto;
+	}
+	#quote #bottom{
+		background: url(../images/depression_bottom.png) no-repeat;
+		width: 452px;
+		height: 4px;
+		margin: auto;
+	}
+	
+	#quote {
+		font-size: 20px;
+		
+		margin: auto;
+		text-shadow: 2px 2px 3px #333;
+		line-height:40px;
+	}
+	
+	#exit a { color: #000;}
+	#exit  a:visited { color: #1A3438; }
+	#exit  a:hover { color: white; background-color:#6FACF2; }
+
+	#exit  a {
+		font-weight: bold;
+		font-family: "Quattrocento", Georgia, serif;
+		color: #1A3438;
+		text-decoration: none;
+		background-color: #5EA4B2;
+		background: url(../images/bar.png) -50px -1px;
+		line-height: 100px;
+		padding: 13px 10px;
+		width: auto;
+		margin: 20px;
+		
+		font-size: 20px;
+
+		-webkit-border-radius: 7px;
+		-moz-border-radius: 7px;
+		border-radius: 7px;
+		-moz-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+		-webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+		box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+	}
 	
 /* common END */
 
@@ -61,8 +113,12 @@
 /* main_page */
 	#main_page #content a { color: #000;}
 	#main_page #content a:visited { color: #1A3438; }
-	#main_page #content a:hover { color: white; background-color:#6FACF2; }
+	#main_page #content a:hover { color: white; background-color:#000; }
 
+	#main_page #content ul li{
+		list-style-type: none;
+	}
+	
 	#main_page #content a {
 		font-weight: bold;
 		font-family: "Quattrocento", Georgia, serif;
@@ -149,7 +205,7 @@
 	
 		margin: 0px;
 		
-		font-size: 15px;
+		font-size: 13px;
 	}
 
 /* cat_page END */
@@ -181,66 +237,62 @@
 		 clip:rect(40px 48px 80px 0);
 		
 	}
-	
-	
-
-	#read_page #content #quote {
-		font-size: 20px;
-		
-		margin: auto;
-		text-shadow: 2px 2px 3px #333;
-		line-height:40px;
-	}
-
-	#read_page #content #quote #top{
-		background: url(../images/depression_top.png) no-repeat;
-		width: 452px;
-		height: 4px;
-		margin: auto;
-		margin-top: 100px;
-	}
-	#read_page #content #quote #mid{
-		background: url(../images/depression_mid.png) ;
-		width: 452px;	
-		margin: auto;
-	}
-	#read_page #content #quote #bottom{
-		background: url(../images/depression_bottom.png) no-repeat;
-		width: 452px;
-		height: 4px;
-		margin: auto;
-	}
-	
-	#read_page #content #exit a { color: #000;}
-	#read_page #content #exit  a:visited { color: #1A3438; }
-	#read_page #content #exit  a:hover { color: white; background-color:#6FACF2; }
-
-	#read_page #content #exit  a {
-		font-weight: bold;
-		font-family: "Quattrocento", Georgia, serif;
-		color: #1A3438;
-		text-decoration: none;
-		background-color: #5EA4B2;
-		background: url(../images/bar.png) -50px -1px;
-		line-height: 100px;
-		padding: 13px 10px;
-		width: auto;
-		margin: 20px;
-		
-		font-size: 20px;
-
-		-webkit-border-radius: 7px;
-		-moz-border-radius: 7px;
-		border-radius: 7px;
-		-moz-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
-		-webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
-		box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
-	}
 
 /* read_page END */
 
 
+/* mash_page */
 
+	#mash_page #content table{
+		margin: auto;
+		position: relative;
+		
+	}
+	
+	#mash_page #content #quote #top{
+		margin:0;
+		padding:0;
+	}
+	
+	
+	#mash_page #content #quote a{
+		text-decoration: none;
+		color: white;
+	}
+	
+	#mash_page #content #quote a:visited{
+		color: white;
+	}
+	
+	#mash_page #content #quote a:hover{color: red;}
+	
+	#mash_page #content #skip a:hover img{
+		margin-top:40px;
+	}
+	#mash_page #content #skip{
+		
+		display: block;
+		 position: absolute;
+		 right: 50%;
+		 margin-right: -20px;
+		 #margin-top: 100px;
+		 clip:rect(40px 48px 80px 0);
+		
+	}
+	
+	#mash_page #content #exit{
+		margin-top: 80px;
+	}
+	
+	#mash_page #content #instructions{
+		margin: 0 0 20px 0;
+		color: white;
+		font-family: "Cantarell", Calibri, Verdana, sans-serif;
+		font-size: 16px;
+		#text-shadow: 1px 2px 3px #333;
+	}
+
+/* mash_page END */
 
 
 

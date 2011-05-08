@@ -1,22 +1,27 @@
 class ReadController < ApplicationController
   def index
-		if params[:category]
-			@category=params[:category]
-		else
-			@category=1
-		end
-
-		if params[:index]
-			@index=params[:index].to_i
-		else
-			@index=0
-  	end
+		@index=params[:index]?params[:index]:0
+		@index=@index.to_i
 		
-		if @index==0
-			@quotes=Category.find(@category).quotes.select("quote").order("score DESC").all
-			session[:quotes]=@quotes
+		if params[:category]
+				reset_session
+				object_ids=Category.find(params[:category]).quotes.select("id").order("score DESC").all
+				ids=[]
+				object_ids.each do |object|
+					ids.push(object.id)
+				end
+				session[:quote_ids]=ids
+				session[:size]=ids.count
+		end	
+		
+		if @index>session[:size]-1
+			#reset
+			@index=0
 		end
-
+		
+		@quote_text=Quote.find(session[:quote_ids][@index]).quote
+		
+		
 	end
 
 end

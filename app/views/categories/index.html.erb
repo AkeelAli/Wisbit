@@ -1,6 +1,6 @@
 <div id="cat_page">
 	<div id="header">
-		<h1>Choose a Category</h1>
+		<h1>Choose a Book/Category</h1>
 	</div>
 	<div id="content">
 		<% if not params[:option] %>
@@ -9,7 +9,7 @@
 			
 			<% @categories.each do |category| %>
 				
-				<div id="category"><%= link_to category.name, params[:option]=="mash"?mash_index_path(:category=>category.id, :index=>0, :win=>0):read_index_path(:category=>category.id, :index=>0)  %></div>
+				<div id="category" title="<%=category.name%>"><%= link_to category.name.length>35?(category.name[0,35]+"..."):(category.name), params[:option]=="mash"?mash_index_path(:category=>category.id):read_index_path(:category=>category.id, :index=>0)  %></div>
 				
 			<% end %>
 			
