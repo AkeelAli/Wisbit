@@ -2,6 +2,7 @@
 <div id="mash_page">
 	<div id="header">
 		<h1>Wisbit Mash</h1>
+		<div id="subtitle"><%= session[:category] %></div>
 	</div>
 	<div id="content">	
 		<% if flash[:notice] %>
@@ -9,7 +10,7 @@
 		<% else %>
 		<% if @start %>
 			<div id="instructions">
-				Click on the wisbit you like most to increase its score
+				Mash wisbits by clicking on the ones you like most
 			</div>
 		<% end %>
 		<table>
@@ -59,6 +60,6 @@
 	</div>
 	
 	<div id="footer">
-	
+		
 	</div>
 </div>

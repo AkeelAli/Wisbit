@@ -24,12 +24,20 @@
 	h1 {
 		line-height: 85px;
 		
-		
+		white-space:nowrap;
 		font-size: 50px;
 		font-weight: bold;
 		text-shadow: 2px 3px 4px black;
 		font-family: "Quattrocento", Georgia, serif;
-		margin: 30px;
+		margin: 0px;
+		margin-top: 30px;
+	}
+	
+	#subtitle {
+		font-size: 12px;
+		font-family: "Quattrocento", Georgia, serif;
+		margin-bottom: 30px;
+		white-space:nowrap;
 	}
 	
 	#share div{
@@ -79,7 +87,7 @@
 		font-size: 20px;
 		margin: auto;
 		#text-shadow: 2px 2px 3px #333;
-		line-height:22px;
+		line-height:24px;
 		text-align: justify;
 		text-indent: 20px;
 	}
@@ -162,18 +170,51 @@
 		border: 2px solid red;
 	}
 	
+	#footer #credits{
+		margin: auto;
+		color: grey;
+		display: none;
+	}
+	
+	#share{
+		display: none;
+	}
+	
+	#footer #social{
+		margin-top: 100px;
+	}
+	
+	#footer #social #twitter{
+		position: absolute;
+		left:50%;
+		margin-left: -60px;
+	}
+	
+	#footer #social #fb{
+		position: absolute;
+		left: 50%;
+		margin-left: 24px;
+		margin-top: 1px;
+	}
+	
 /* common END */
 
 
 /* main_page */
+
+	#main_page h1{
+		margin-bottom: 20px;
+	}
+
 	#main_page #content a:visited { color: #1A3438; }
 	#main_page #content a:hover { color: white; background-color: #6FACF2; }
-
+	
 	#main_page #content ul li{
 		list-style-type: none;
 	}
 	
 	#main_page #content a {
+		white-space:nowrap;
 		font-weight: bold;
 		font-family: "Quattrocento", Georgia, serif;
 		color: #1A3438;
@@ -224,9 +265,7 @@
 	/* intro END*/
 
 	/* footer */
-		#main_page #footer {
 
-		}
 	/* footer END */
 
 /* main_page END */
@@ -266,6 +305,7 @@
 
 /* read_page */
 
+
 	#read_page #content #navigate a:hover img{
 		margin-top:40px;
 	}
@@ -276,7 +316,7 @@
 		 position: absolute;
 		 left: 50%;
 		 margin-left: -100px;
-		 margin-top: 100px;
+		 margin-top: 130px;
 		 clip:rect(40px 48px 80px 0px);
 		 
 	}
@@ -287,7 +327,7 @@
 		 position: absolute;
 		 right: 50%;
 		 margin-right: -100px;
-		 margin-top: 100px;
+		 margin-top: 130px;
 		 clip:rect(40px 48px 80px 0);
 		
 	}
@@ -335,7 +375,11 @@
 	}
 	
 	#mash_page #content #exit{
+		
 		margin-top: 80px;
+		position: absolute;
+		right:50%;
+		margin-right:-50px;
 	}
 	
 	#mash_page #content #instructions{
@@ -343,6 +387,7 @@
 		color: white;
 		font-family: "Cantarell", Calibri, Verdana, sans-serif;
 		font-size: 16px;
+		text-decoration: underline;
 		#text-shadow: 1px 2px 3px #333;
 	}
 

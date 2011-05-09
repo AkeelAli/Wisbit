@@ -12,6 +12,7 @@ class ReadController < ApplicationController
 						ids.push(object.id)
 					end
 					session[:quote_ids]=ids
+					session[:category]=Category.find(params[:category]).name
 					session[:size]=ids.count
 			end	
 			
