@@ -46,6 +46,7 @@ class MashController < ApplicationController
 	end
   
 	def index
+		begin
 			if params[:category]
 				#setup at start of round
 				reset_session
@@ -98,6 +99,8 @@ class MashController < ApplicationController
 
 			@quote1_text=q1.quote
 			@quote2_text=q2.quote
+			@quote1_score=q1.score.to_i
+			@quote2_score=q2.score.to_i
 
 
 	
@@ -121,6 +124,10 @@ class MashController < ApplicationController
 			#social_title="title"
 			#@quote1_social="<a href=\"http://twitter.com/share\" class=\"twitter-share-button\" data-url=\"".html_safe+social_url+"\" data-text=\"".html_safe+social_title+"\" data-count=\"horizontal\">Tweet</a><script type=\"text/javascript\" src=\"http://platform.twitter.com/widgets.js\"></script>".html_safe
 			#@quote1_social+="<iframe style=\" display:inline; margin-left:200px; padding:0;\" src=\"http://www.facebook.com/plugins/like.php?href=url.goes%2Fhere&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21\" scrolling=\"no\" frameborder=\"0\" style=\"border:none; overflow:hidden; width:450px; height:21px;\" allowTransparency=\"true\"></iframe>".html_safe
+		rescue ActiveRecord::RecordNotFound
+			logger.error "CUSTOM_ERROR: Attempt to access invalid record with category: #{params[:category]} and win: #{params[:win]}"
+			redirect_to root_url, :notice=>'Oops... something went wrong. I\'ll be on it in a second.'
+		end
 	end
 
 end

@@ -13,11 +13,14 @@
 		
 			<div id="quote">
 				<div id="top"></div>
-				<div id="mid"><%= @quote_text %></div>
+				<div id="mid"><p><%= @quote_text %></p></div>
 				<div id="bottom"></div>
 			</div>
-			
-
+			<div id="score">
+				<div id="top"></div>
+				<div id="mid"><p><%= @quote_score %></p></div>
+				<div id="bottom"></div>
+			</div>
 			
 			<div id="exit">
 				<%= link_to "Exit", "/" %>

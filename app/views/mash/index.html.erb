@@ -9,7 +9,7 @@
 		<% else %>
 		<% if @start %>
 			<div id="instructions">
-				Choose the wisbit you like most
+				Click on the wisbit you like most to increase its score
 			</div>
 		<% end %>
 		<table>
@@ -17,14 +17,24 @@
 				<td style="vertical-align:bottom">
 				<div id="quote">
 					<div id="top"></div>
-					<div id="mid"><%= link_to @quote1_text, mash_index_path(:win=>1)  %></div> 
+					<div id="mid"><p><%= link_to @quote1_text, mash_index_path(:win=>1)  %></p></div> 
+					<div id="bottom"></div>
+				</div>
+				<div id="score">
+					<div id="top"></div>
+					<div id="mid"><p><%= @quote1_score %></p></div>
 					<div id="bottom"></div>
 				</div>
 				</td>
 				<td style="vertical-align:bottom"> 
 				<div id="quote">
 					<div id="top"></div>
-					<div id="mid"><%= link_to @quote2_text, mash_index_path(:win=>2) %></div> 
+					<div id="mid"><p><%= link_to @quote2_text, mash_index_path(:win=>2) %></p></div> 
+					<div id="bottom"></div>
+				</div>
+				<div id="score">
+					<div id="top"></div>
+					<div id="mid"><p><%= @quote2_score %></p></div>
 					<div id="bottom"></div>
 				</div>
 				</td>

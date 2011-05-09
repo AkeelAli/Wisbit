@@ -3,7 +3,7 @@ class CreateQuotes < ActiveRecord::Migration
     create_table :quotes do |t|
       t.string :title
       t.text :quote
-      t.decimal :score
+      t.decimal :score,:precision=>10, :scale=>2
 
       t.timestamps
     end

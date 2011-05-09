@@ -1,9 +1,14 @@
 <div id="main_page">
 	<div id="header">
-		<h1>Wisbits Menu</h1>
+		<h1>Wisbits</h1>
 	</div>
 	
 	<div id="content">
+	
+	<% if flash[:notice] %>
+			<div id="notice"><%= flash[:notice] %></div>
+	<% end %>
+	
 	<div id="intro">
 		<div id="top"></div>
 		<div id="mid">
