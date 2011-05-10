@@ -34,10 +34,11 @@
 	}
 	
 	#subtitle {
-		font-size: 12px;
+		font-size: 13px;
 		font-family: "Quattrocento", Georgia, serif;
 		margin-bottom: 30px;
 		white-space:nowrap;
+
 	}
 	
 	#share div{
@@ -170,24 +171,35 @@
 		border: 2px solid red;
 	}
 	
-	#footer #credits{
-		margin: auto;
-		color: grey;
-		display: none;
+	/* added base after footer only for main page*/
+	#base{
+		width:100%; 
+		background-color: #14292C; 
+		border-top:1px solid #555;
+		position:fixed;
+		bottom: 0px;
+		
+		height:40px;
+		
 	}
+	
+	#base a{color:#6FACF2;	}
+	#base a:visited {color:#6FACF2;	}
 	
 	#share{
 		display: none;
 	}
 	
 	#footer #social{
-		margin-top: 100px;
+		margin-top: 70px;
+		
 	}
 	
 	#footer #social #twitter{
 		position: absolute;
 		left:50%;
 		margin-left: -60px;
+		
 	}
 	
 	#footer #social #fb{
@@ -265,13 +277,79 @@
 	/* intro END*/
 
 	/* footer */
-
+	
+	#footer #info #top{
+		background: url(../images/depression_top.png) no-repeat;
+		width: 452px;
+		height: 4px;
+		margin: auto;
+		margin-top: 40px;
+	}
+	#footer  #info #mid{
+		background: url(../images/depression_mid.png) ;
+		width: 452px;	
+		margin: auto;
+	}
+	#footer #info #bottom{
+		background: url(../images/depression_bottom.png) no-repeat;
+		width: 452px;
+		height: 4px;
+		margin: auto;
+	}
+	
+	#footer #info  a{color:#6FACF2;}
+	#footer #info  a:visited{color: #6FACF2;	}
+	
+	#footer #info p{
+		color: white;
+		font-family: "Cantarell", Calibri, Verdana, sans-serif;
+		
+		letter-spacing:1px;
+		font-size: 15px;
+		text-align: justify;
+		#text-shadow: 1px 2px 3px #333;
+		
+		text-indent: 10px;
+		padding: 5px 10px;
+	}
+	
+	#footer #question a:hover img{
+		margin-top:446px;
+		clip:rect(0px 20px 26px 0px);
+	}
+	#footer #question img{
+		top:0;
+		display: inline;
+		 position: absolute;
+		 right: 50%;
+		 margin-right: -16px;
+		 margin-top: 420px;
+		 clip:rect(26px 20px 80px 0px);
+		 width:20px;
+		 
+	}
 	/* footer END */
 
 /* main_page END */
 
 
 /*cat_page */
+
+	#cat_page #content #navigate a:hover img{
+		margin-top:40px;
+	}
+
+	#cat_page #content #navigate #left{
+		top: 0;
+		display: inline;
+		 position: absolute;
+		 left: 50%;
+		 margin-left: -27px;
+		 margin-top: 70px;
+		 clip:rect(40px 48px 80px 0px);
+		 
+	}
+	
 	#cat_page #content #category{
 		margin: auto;
 		width: 300px;
@@ -279,8 +357,9 @@
 		
 	}
 	
-	#cat_page #content #category{
-		
+	#cat_page #content #categories{
+			margin-top: 50px;
+			margin-bottom: 50px;
 	}
 	#cat_page #content #category a { color: #000;}
 	#cat_page #content #category a:visited { color: #1A3438; }

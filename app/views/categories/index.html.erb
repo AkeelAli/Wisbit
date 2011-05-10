@@ -4,13 +4,17 @@
 	</div>
 	<div id="content">
 
+			<div id="navigate">
+				<div id="left"><%= link_to image_tag("../images/slide_left.png"), root_path %></div>
+			</div>
 			
+			<div id="categories">
 			<% @categories.each do |category| %>
 				
 				<div id="category" title="<%=category.name%>"><%= link_to category.name.length>35?(category.name[0,35]+"..."):(category.name), params[:option]=="mash"?mash_index_path(:category=>category.id):read_index_path(:category=>category.id, :index=>0)  %></div>
 				
 			<% end %>
-			
+			</div>
 
 
 	</div>

@@ -1,6 +1,6 @@
 <div id="main_page">
 	<div id="header">
-		<h1>Wisbits</h1>
+		<h1>The Wisbit App</h1>
 	</div>
 	
 	<div id="content">
@@ -12,7 +12,7 @@
 	<div id="intro">
 		<div id="top"></div>
 		<div id="mid">
-			<p> Welcome, this is the wisbit plateform here to serve your needs</p>
+			<p> </p>
 		</div>
 		<div id="bottom"></div>
 	</div>
@@ -27,6 +27,36 @@
 			
 		
 	<div id="footer">
+		<div id="question">
+			<a href="#" onclick="expand(); return false;"><img src="../images/question_mark.png" /></a>
+		</div>
+			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+			<script type="text/javascript">
+				function expand(){
+					
+					$("#footer #info").toggle();
+				}
+			</script>
+		<div id="info" style="display:none;">
+			<div id="top"></div>
+			<div id="mid">
+				<p>
+					When you realize <a target="_clear" href="http://www.npr.org/blogs/monkeysee/2011/04/21/135508305/the-sad-beautiful-fact-that-were-all-going-to-miss-almost-everything">the sad, beautiful fact</a>
+					about our inability to absorb even a fraction of the ever increasing corpus  
+					of wisdom in our world, and when you hear google's Eric Schmidt talking about <a target="_clear" href="http://techcrunch.com/2010/08/04/schmidt-data/">the incredible rate at which 
+					data is produced</a>, you're left wondering how will you ever learn the gist of everything around you.
+				</p>
+				
+				<p>
+					With the Wisbit web app, you need wonder no more. This application lets you browse the best passages (or wisbits, for wisdom-tidbits) of several books in the order they are deemed important by the crowds.
+					You can have fun "mashing" wisbits to score the passages against one another and learn something new along the way, or jump right into reading wisbits based on their ranking.
+				</p>
+				<p>
+					If the idea appeals to you, and if I don't get a C&D in the coming days, you can also contribute by selecting wisbits from your own books and submiting them.
+				</p>
+			</div>
+			<div id="bottom"></div>
+		</div>
 		<div id="social">
 			<div id="twitter">
 				<a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
@@ -35,15 +65,13 @@
 				<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwisbit.akeelali.com&amp;send=false&amp;layout=box_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=90" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:90px;" allowTransparency="true"></iframe>
 			</div>
 		</div>
-	
-		<div id="share">
-			<div id="twitter"><a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical"><img src="../images/share/twitter.png" /></a></div>
-			<div id="email"><a href="mailto:;subject=Wisbit+App"><img src="../images/share/email.png" /></a></div>
-			<div id="facebook"><a href=""><img src="../images/share/facebook.png" /></a></div>
-		</div>
-		<div id="credits">
-			<span style="font-weight:bold; text-decoration:underline;">Thanks</span> to ..., .... for testing the beta.
-		</div>
+		<!-- Prevent overlap with base -->
+		<div><br /><br /><br /><br /><br /><br /><br /><br /><br /></div>
 
+	</div>
+	
+	<div id="base">
+			<div id="thanks"><p><span style="">Thanks</span> to <a href="https://www.facebook.com/vsridh">Vinod</a> for testing the beta</p><div>
+			<div id="author"><a href="http://akeelali.com"><img src="http://akeelali.com/wp-content/uploads/2010/11/akeelali_footer.png" /></a></div>
 	</div>
 </div>
