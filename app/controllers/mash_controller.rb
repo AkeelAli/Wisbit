@@ -76,9 +76,9 @@ class MashController < ApplicationController
 					q2.matchups+=1
 						
 					if win==1
-						q1.score+=0.1
+						q1.score+=q2.score+1
 					elsif win==2
-						q2.score+=0.1
+						q2.score+=q1.score+1
 					end
 						
 					q1.save
