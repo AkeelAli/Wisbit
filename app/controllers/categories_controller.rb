@@ -2,7 +2,7 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.xml
   def index
-    @categories = Category.all
+   @categories = Category.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,6 +13,8 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.xml
   def show
+	redirect_to root_url
+	return
     @category = Category.find(params[:id])
 
     respond_to do |format|
@@ -24,6 +26,8 @@ class CategoriesController < ApplicationController
   # GET /categories/new
   # GET /categories/new.xml
   def new
+	redirect_to root_url
+	return
     @category = Category.new
 
     respond_to do |format|
@@ -34,12 +38,16 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1/edit
   def edit
+	redirect_to root_url
+	return
     @category = Category.find(params[:id])
   end
 
   # POST /categories
   # POST /categories.xml
   def create
+	redirect_to root_url
+	return
     @category = Category.new(params[:category])
 
     respond_to do |format|
@@ -56,6 +64,8 @@ class CategoriesController < ApplicationController
   # PUT /categories/1
   # PUT /categories/1.xml
   def update
+	redirect_to root_url
+	return
     @category = Category.find(params[:id])
 
     respond_to do |format|
@@ -72,6 +82,8 @@ class CategoriesController < ApplicationController
   # DELETE /categories/1
   # DELETE /categories/1.xml
   def destroy
+	redirect_to root_url
+	return
     @category = Category.find(params[:id])
     @category.destroy
 

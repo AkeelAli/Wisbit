@@ -6,7 +6,7 @@ class ReadController < ApplicationController
 			
 			if params[:category]
 					reset_session
-					object_ids=Category.find(params[:category]).quotes.select("id").order("score DESC").all
+					object_ids=Category.find(params[:category]).quotes.find(:all, :select=>'id',:order=>'score DESC')
 					ids=[]
 					object_ids.each do |object|
 						ids.push(object.id)

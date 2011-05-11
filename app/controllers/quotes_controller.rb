@@ -2,6 +2,8 @@ class QuotesController < ApplicationController
   # GET /quotes
   # GET /quotes.xml
   def index
+	redirect_to root_url
+	return
     @quotes = Quote.all
 
     respond_to do |format|
@@ -13,6 +15,8 @@ class QuotesController < ApplicationController
   # GET /quotes/1
   # GET /quotes/1.xml
   def show
+	redirect_to root_url
+	return
     @quote = Quote.find(params[:id])
 
     respond_to do |format|
@@ -24,6 +28,8 @@ class QuotesController < ApplicationController
   # GET /quotes/new
   # GET /quotes/new.xml
   def new
+	redirect_to root_url, :notice=>"I will implement this feature once we have a decent number of tweets/likes ;)"
+	return
     @quote = Quote.new
     
 		respond_to do |format|
@@ -34,12 +40,16 @@ class QuotesController < ApplicationController
 
   # GET /quotes/1/edit
   def edit
+	redirect_to root_url
+	return
     @quote = Quote.find(params[:id])
   end
 
   # POST /quotes
   # POST /quotes.xml
   def create
+	redirect_to root_url
+	return
     @quote = Quote.new(params[:quote])
 		#default value (ideally should be in migration)
 		@quote.matchups=0
@@ -59,6 +69,8 @@ class QuotesController < ApplicationController
   # PUT /quotes/1
   # PUT /quotes/1.xml
   def update
+	redirect_to root_url
+	return
     @quote = Quote.find(params[:id])
 
     respond_to do |format|
@@ -75,6 +87,8 @@ class QuotesController < ApplicationController
   # DELETE /quotes/1
   # DELETE /quotes/1.xml
   def destroy
+	redirect_to root_url
+	return
     @quote = Quote.find(params[:id])
     @quote.destroy
 

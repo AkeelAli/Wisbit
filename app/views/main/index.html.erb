@@ -17,9 +17,26 @@
 		<div id="bottom"></div>
 	</div>
 	<ul>
-		<li><%= link_to "Read Wisbits", categories_path(:option=>'read')  %></li>
-		<li><%=	link_to "Mash Wisbits", categories_path(:option=>'mash')  %></li>
-		<li><%=	link_to "Submit Wisbits", new_quote_path %></li>
+		<li>
+			<div id="tooltip">
+				<% text1="Get your daily shot of wisdom here...".html_safe %>
+				<%= link_to content_tag(:span, text1) + "Read Wisbits" , categories_path(:option=>'read')  %>
+			</div>
+		</li>
+		<li>
+			<div id="tooltip">
+				<% text2="A fun way to memorize wisbits by ranking them...".html_safe %>
+				<%=	link_to content_tag(:span, text2) + "Mash Wisbits", categories_path(:option=>'mash')  %>
+			</div>
+			
+		</li>
+		<li>
+			<div id="tooltip">
+				<% text3="Submit your very own wisbits...".html_safe %>
+				<%=	link_to content_tag(:span, text3) + "Submit Wisbits", new_quote_path %>
+			</div>
+			
+		</li>
 	</ul>
 	
 	</div>

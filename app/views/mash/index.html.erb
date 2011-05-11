@@ -10,15 +10,31 @@
 		<% else %>
 		<% if @start %>
 			<div id="instructions">
-				Mash wisbits by clicking on the ones you like most
+				Rank wisbits by clicking on the ones you like most
 			</div>
+			<script type="text/javascript">
+				//blink thrice: ugly soln, but does the job
+				var count=0;
+				
+				function blink(){
+					if (count==7)
+						return;
+					
+					e=document.getElementById('instructions');
+					e.style.visibility=(e.style.visibility=='visible')?'hidden':'visible';
+					count++;
+				}
+				
+				document.observe('dom:loaded', function(){setInterval('blink()',200);});
+			</script>
+			
 		<% end %>
 		<table>
 			<tr>
 				<td style="vertical-align:bottom">
 				<div id="quote">
 					<div id="top"></div>
-					<div id="mid"><p><%= link_to @quote1_text, mash_index_path(:win=>1)  %></p></div> 
+					<div id="mid"><p><%= link_to @quote1_text, {:controller=>"mash", :win=>1}, {:method=>:post}  %></p></div> 
 					<div id="bottom"></div>
 				</div>
 				<div id="score">
@@ -30,7 +46,7 @@
 				<td style="vertical-align:bottom"> 
 				<div id="quote">
 					<div id="top"></div>
-					<div id="mid"><p><%= link_to @quote2_text, mash_index_path(:win=>2) %></p></div> 
+					<div id="mid"><p><%= link_to @quote2_text, {:controller=>"mash", :win=>2}, {:method=>:post}  %></p></div> 
 					<div id="bottom"></div>
 				</div>
 				<div id="score">
