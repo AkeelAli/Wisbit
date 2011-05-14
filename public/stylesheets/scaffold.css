@@ -8,22 +8,17 @@
 		vertical-align: baseline;
 	}
 /*reset END*/
-
 /* common */
 	body { 
 		background-image: url(../images/bg_pattern.png);
 		background-color: #1A3438; 
 		color: white;
 		font-family: "Cantarell", Calibri, Verdana, sans-serif;
-		font-size: 14px;
-		#text-shadow: 1px 2px 3px #333;
-		
+		font-size: 14px;	
 		text-align: center;
 	}
-
 	h1 {
 		line-height: 85px;
-		
 		white-space:nowrap;
 		font-size: 50px;
 		font-weight: bold;
@@ -32,22 +27,17 @@
 		margin: 0px;
 		margin-top: 30px;
 	}
-	
 	#subtitle {
 		font-size: 14px;
 		font-family: "Quattrocento", Georgia, serif;
 		margin-bottom: 30px;
 		white-space:nowrap;
-
 	}
-	
 	#share div{
 		display: inline;
 		line-height: 200px;
 		margin: 20px 5px;
-		#background-image: url('../images/facebook.png');
 	}
-
 	#share img{
 		position: absolute;
 		left: 50%;
@@ -58,11 +48,7 @@
 	}
 	#share #twitter img{ margin-left:-71px;}
 	#share #email img{ margin-left:46px;}
-	
-	#share a:hover img{
-		top:498px;
-	}	
-	
+	#share a:hover img{ top:498px;}	
 	#quote #top{
 		background: url(../images/depression_top.png) no-repeat;
 		width: 452px;
@@ -81,18 +67,14 @@
 		height: 4px;
 		margin: auto;
 	}
-	
 	#quote {
-		
 		font:inherit;
 		font-size: 20px;
 		margin: auto;
-		#text-shadow: 2px 2px 3px #333;
 		line-height:24px;
 		text-align: justify;
 		text-indent: 20px;
 	}
-	
 	#quote p{
 		padding-top: 2px;
 		padding-bottom: 4px; 
@@ -100,14 +82,13 @@
 		padding-right:10px;
 		
 	}
-	
 	#score #top{
 		background: url(../images/depression_top_100.png) no-repeat;
 		width: 100px;
 		height: 4px;
 		margin: auto;
 	}
-	 #score #mid{
+	#score #mid{
 		background: url(../images/depression_mid_100.png) ;
 		width: 100px;	
 		margin: auto;
@@ -119,7 +100,6 @@
 		margin: auto;
 		margin-bottom: 22px;
 	}
-	
 	#score {
 		
 		font:inherit;
@@ -128,19 +108,15 @@
 		line-height:22px;
 		text-align: center;
 	}
-	
 	#score p{
 		padding-top: 2px;
 		padding-bottom: 4px; 
 		padding-left:10px;
 		padding-right:10px;
-		
 	}
-	
 	#exit a { color: #000;}
 	#exit  a:visited { color: #1A3438; }
 	#exit  a:hover { color: white; background-color:#6FACF2; }
-
 	#exit  a {
 		font-weight: bold;
 		font-family: "Quattrocento", Georgia, serif;
@@ -152,9 +128,7 @@
 		padding: 13px 10px;
 		width: auto;
 		margin: 20px;
-		
 		font-size: 20px;
-
 		-webkit-border-radius: 7px;
 		-moz-border-radius: 7px;
 		border-radius: 7px;
@@ -162,7 +136,6 @@
 		-webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
 		box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
 	}
-	
 	#notice {
 		width: 500px;
 		margin: auto;
@@ -170,7 +143,6 @@
 		color: white;
 		border: 2px solid red;
 	}
-	
 	/* added base after footer only for main page*/
 	#base{
 		width:100%; 
@@ -178,53 +150,33 @@
 		border-top:1px solid #555;
 		position:fixed;
 		bottom: 0px;
-		
 		height:40px;
-		
 	}
-	
 	#base a{color:#6FACF2;	}
 	#base a:visited {color:#6FACF2;	}
-	
-	#share{
-		display: none;
-	}
-	
+	#share{display: none;}
 	#footer #social{
 		margin-top: 70px;
-		
 	}
-	
 	#footer #social #twitter{
 		position: absolute;
 		left:50%;
 		margin-left: -60px;
-		
 	}
-	
 	#footer #social #fb{
 		position: absolute;
 		left: 50%;
 		margin-left: 24px;
 		margin-top: 1px;
 	}
-	
 /* common END */
-
-
 /* main_page */
-
-	#main_page h1{
-		margin-bottom: 20px;
-	}
-
+	#main_page h1{margin-bottom: 20px;}
 	#main_page #content a:visited { color: #1A3438; }
 	#main_page #content a:hover { color: white; background-color: #6FACF2; }
-	
 	#main_page #content ul li{
 		list-style-type: none;
 	}
-	
 	#main_page #content a {
 		white-space:nowrap;
 		font-weight: bold;
@@ -237,9 +189,7 @@
 		padding: 13px 10px;
 		width: auto;
 		margin: 20px;
-		
 		font-size: 20px;
-
 		-webkit-border-radius: 7px;
 		-moz-border-radius: 7px;
 		border-radius: 7px;
@@ -247,13 +197,11 @@
 		-webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
 		box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
 	}
-
 	#main_page #content #tooltip { position: relative; }
 	#main_page #content #tooltip a span { display: none; color: white; font-size:14px; font-family: "Cantarell", Calibri, Verdana, sans-serif; }
 	#main_page #content #tooltip a:hover span { 
 		display: block; 
 		position: absolute;
-
 		background-color: black; 
 		line-height: 25px;
 		left: 50%;
@@ -262,7 +210,6 @@
 		padding: 5px;
 		padding-top:3px;
 		padding-bottom:3px;
-		
 		-webkit-border-radius: 7px;
 		-moz-border-radius: 7px;
 		border-radius: 7px;
@@ -274,28 +221,9 @@
 
 	/* intro */
 		#main_page #intro{ display: none;}
-
-		/*
-		#main_page #content #intro #top{
-			background: url(../images/depression_top.png) no-repeat;
-			width: 452px;
-			height: 4px;
-		}
-		#main_page #content #intro #mid{
-			background: url(../images/depression_mid.png) ;
-			width: 452px;	
-		}
-		#main_page #content #intro #bottom{
-			background: url(../images/depression_bottom.png) no-repeat;
-			width: 452px;
-			height: 4px;
-		}*/
-
-
 	/* intro END*/
 
 	/* footer */
-	
 	#footer #info #top{
 		background: url(../images/depression_top.png) no-repeat;
 		width: 452px;
@@ -314,23 +242,17 @@
 		height: 4px;
 		margin: auto;
 	}
-	
 	#footer #info  a{color:#6FACF2;}
 	#footer #info  a:visited{color: #6FACF2;	}
-	
 	#footer #info p{
 		color: white;
 		font-family: "Cantarell", Calibri, Verdana, sans-serif;
-		
 		letter-spacing:1px;
 		font-size: 15px;
 		text-align: justify;
-		#text-shadow: 1px 2px 3px #333;
-		
 		text-indent: 10px;
 		padding: 5px 10px;
 	}
-	
 	#footer #question a:hover img{
 		margin-top:446px;
 		clip:rect(0px 20px 26px 0px);
@@ -344,19 +266,13 @@
 		 margin-top: 420px;
 		 clip:rect(26px 20px 80px 0px);
 		 width:20px;
-		 
 	}
 	/* footer END */
-
 /* main_page END */
 
 
 /*cat_page */
-
-	#cat_page #content #navigate a:hover img{
-		margin-top:40px;
-	}
-
+	#cat_page #content #navigate a:hover img{margin-top:40px;}
 	#cat_page #content #navigate #left{
 		top: 0;
 		display: inline;
@@ -364,143 +280,89 @@
 		 left: 50%;
 		 margin-left: -27px;
 		 margin-top: 70px;
-		 clip:rect(40px 48px 80px 0px);
-		 
+		 clip:rect(40px 48px 80px 0px); 
 	}
-	
 	#cat_page #content #category{
 		margin: auto;
 		width: 300px;
 		background: url(../images/bar.png) -50px 0px;
-		
 	}
-	
 	#cat_page #content #categories{
-			margin-top: 50px;
-			margin-bottom: 50px;
+		margin-top: 50px;
+		margin-bottom: 50px;
 	}
 	#cat_page #content #category a { color: #6FACF2;}
 	#cat_page #content #category a:visited { color: #6FACF2; }
 	#cat_page #content #category a:hover { color: white; background-color:#6FACF2; }
-	
 	#cat_page #content #category a{
 		display: block;
 		font-family: "Quattrocento", Georgia, serif;
 		color: #6FACF2;
 		text-decoration: none;
-		
 		background: url(../images/bar.png) -50px 0px;
 		line-height: 30px;
-		
-	
 		margin: 0px;
-		
 		font-size: 14px;
 	}
 
 /* cat_page END */
-
 /* read_page */
-
-
 	#read_page #content #navigate a:hover img{
 		margin-top:40px;
 	}
-	
 	#read_page #content #navigate #left{
 		top: 0;
 		display: inline;
-		 position: absolute;
-		 left: 50%;
-		 margin-left: -100px;
-		 margin-top: 130px;
-		 clip:rect(40px 48px 80px 0px);
-		 
+		position: absolute;
+		left: 50%;
+		margin-left: -100px;
+		margin-top: 130px;
+		clip:rect(40px 48px 80px 0px); 
 	}
-	
 	#read_page #content #navigate #right{
 		top:0;
 		display: inline;
-		 position: absolute;
-		 right: 50%;
-		 margin-right: -100px;
-		 margin-top: 130px;
-		 clip:rect(40px 48px 80px 0);
-		
+		position: absolute;
+		right: 50%;
+		margin-right: -100px;
+		margin-top: 130px;
+		clip:rect(40px 48px 80px 0);
 	}
-
 /* read_page END */
-
-
 /* mash_page */
-
 	#mash_page #content table{
 		margin: auto;
 		position: relative;
-		
 	}
-	
 	#mash_page #content #quote #top{
 		margin:0;
 		padding:0;
 	}
-	
-	
 	#mash_page #content #quote a{
 		text-decoration: none;
 		color: white;
 	}
-	
-	#mash_page #content #quote a:visited{
-		color: white;
-	}
-	
+	#mash_page #content #quote a:visited{color: white;}
 	#mash_page #content #quote a:hover{color: red;}
-	
-	#mash_page #content #skip a:hover img{
-		margin-top:40px;
-	}
-	#mash_page #content #skip{
-		
+	#mash_page #content #skip a:hover img{ margin-top:40px;}
+	#mash_page #content #skip{	
 		display: block;
-		 position: absolute;
-		 right: 50%;
-		 margin-right: -20px;
-		 #margin-top: 100px;
-		 clip:rect(40px 48px 80px 0);
-		
+		position: absolute;
+		right: 50%;
+		margin-right: -20px;
+		clip:rect(40px 48px 80px 0);
 	}
-	
 	#mash_page #content #exit{
-		
 		margin-top: 80px;
 		position: absolute;
 		right:50%;
 		margin-right:-50px;
 	}
-	
 	#mash_page #content #instructions{
 		margin: 0 0 20px 0;
 		color: white;
 		font-family: "Cantarell", Calibri, Verdana, sans-serif;
 		font-size: 16px;
 		text-decoration: underline;
-		#text-shadow: 1px 2px 3px #333;
 	}
-
 /* mash_page END */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

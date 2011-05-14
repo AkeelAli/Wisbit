@@ -11,23 +11,7 @@
 		<% if @start %>
 			<div id="instructions">
 				Rank wisbits by clicking on the ones you like most
-			</div>
-			<script type="text/javascript">
-				//blink thrice: ugly soln, but does the job
-				var count=0;
-				
-				function blink(){
-					if (count==7)
-						return;
-					
-					e=document.getElementById('instructions');
-					e.style.visibility=(e.style.visibility=='visible')?'hidden':'visible';
-					count++;
-				}
-				
-				document.observe('dom:loaded', function(){setInterval('blink()',200);});
-			</script>
-			
+			</div>			
 		<% end %>
 		<table>
 			<tr>
