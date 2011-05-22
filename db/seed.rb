@@ -1,9 +1,9 @@
 f=File.open("seeds.rb","w")
 
-f.puts "Quote.delete_all\n"
-f.puts "Category.delete_all\n"
+#f.puts "Quote.delete_all\n"
+#f.puts "Category.delete_all\n"
 
-category=1
+category=42
 
 Dir.glob("*.txt") do |file|
 	

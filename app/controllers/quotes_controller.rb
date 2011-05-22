@@ -15,9 +15,13 @@ class QuotesController < ApplicationController
   # GET /quotes/1
   # GET /quotes/1.xml
   def show
-	redirect_to root_url
-	return
-    @quote = Quote.find(params[:id])
+	begin
+		@quote = Quote.find(params[:id])
+		@category = Category.find(@quote.category_id)
+	rescue ActiveRecord::RecordNotFound
+		redirect_to root_url
+		return
+	end
 
     respond_to do |format|
       format.html # show.html.erb

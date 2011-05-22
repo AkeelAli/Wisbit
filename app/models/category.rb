@@ -1,3 +1,3 @@
 class Category < ActiveRecord::Base
-	has_many :quotes
+	has_many :quotes, :dependent => :destroy
 end

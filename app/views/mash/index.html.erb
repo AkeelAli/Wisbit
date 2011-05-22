@@ -18,26 +18,63 @@
 				<td style="vertical-align:bottom">
 				<div id="quote">
 					<div id="top"></div>
-					<div id="mid"><p><%= link_to @quote1_text, {:controller=>"mash", :win=>1}, {:method=>:post}  %></p></div> 
+					<div id="mid"><p><%= link_to @quote1.quote, {:controller=>"mash", :win=>1}, {:method=>:post}  %></p></div> 
 					<div id="bottom"></div>
 				</div>
-				<div id="score">
-					<div id="top"></div>
-					<div id="mid"><p><%= @quote1_score %></p></div>
-					<div id="bottom"></div>
+				<div id="under_quote">
+					<table>
+						<tr>
+						<td>
+							<div id="twitter">
+								<a href="http://twitter.com/share" class="twitter-share-button" data-url="http://wisbit.akeelali.com/quotes/<%= @quote1.id %>" data-text="<%= @quote1.quote.length>117?@quote1.quote[0,117]+"...":@quote1.quote %>" data-count="none">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>		
+							</div>
+						</td>
+						<td>
+							<div id="score">
+								<div id="top"></div>
+								<div id="mid"><p><%= @quote1.score.to_i %></p></div>
+								<div id="bottom"></div>
+							</div>
+						</td>
+						<td>
+							<div id="fb">
+								<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=160049097390643&amp;xfbml=1"></script><fb:like href="http://wisbit.akeelali.com/quotes/<%= @quote1.id %>" send="false" layout="button_count" width="60" show_faces="false" font=""></fb:like>
+							</div>
+						</td>
+						</tr>
+					</table>
 				</div>
 				</td>
 				<td style="vertical-align:bottom"> 
 				<div id="quote">
 					<div id="top"></div>
-					<div id="mid"><p><%= link_to @quote2_text, {:controller=>"mash", :win=>2}, {:method=>:post}  %></p></div> 
+					<div id="mid"><p><%= link_to @quote2.quote, {:controller=>"mash", :win=>2}, {:method=>:post}  %></p></div> 
 					<div id="bottom"></div>
 				</div>
-				<div id="score">
-					<div id="top"></div>
-					<div id="mid"><p><%= @quote2_score %></p></div>
-					<div id="bottom"></div>
+				<div id="under_quote">
+					<table>
+						<tr>
+						<td>
+							<div id="twitter">
+								<a href="http://twitter.com/share" class="twitter-share-button" data-url="http://wisbit.akeelali.com/quotes/<%= @quote2.id %>" data-text="<%= @quote2.quote.length>117?@quote2.quote[0,117]+"...":@quote2.quote %>" data-count="none">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>		
+							</div>
+						</td>
+						<td>
+							<div id="score">
+								<div id="top"></div>
+								<div id="mid"><p><%= @quote2.score.to_i %></p></div>
+								<div id="bottom"></div>
+							</div>
+						</td>
+						<td>
+							<div id="fb">
+								<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=160049097390643&amp;xfbml=1"></script><fb:like href="http://wisbit.akeelali.com/quotes/<%= @quote2.id %>" send="false" layout="button_count" width="60" show_faces="false" font=""></fb:like>
+							</div>
+						</td>
+						</tr>
+					</table>
 				</div>
+
 				</td>
 			</tr>
 

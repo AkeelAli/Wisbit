@@ -4,8 +4,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>Quotes: <%= controller.action_name %></title>
+  <title>The Wisbit App</title>
   <%= stylesheet_link_tag 'scaffold' %>
+  
+  <meta property="og:image" content="http://wisbit.akeelali.com/images/w.png" />
+	<meta property="og:title" content="A Wisdom Tidbit" />
+	<meta property="og:type" content="book" />
+
+	<meta property="og:url" content="http://wisbit.akeelali.com/quotes/<%= @quote.id %>" />
+	<meta property="og:description" content="<%= @quote.quote.gsub("\"","&quot;").html_safe %>" />
+	<meta property="fb:admins" content="akeel.ali" />
+
 </head>
 <body>
 

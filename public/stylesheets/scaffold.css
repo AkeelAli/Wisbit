@@ -80,7 +80,27 @@
 		padding-bottom: 4px; 
 		padding-left:10px;
 		padding-right:10px;
+	}
+		#under_quote table{
+		margin: auto;
+
 		
+	}
+	#under_quote table td{
+		vertical-align: middle;
+	}
+	
+	#under_quote #twitter{
+		margin-right: 20px;
+		margin-top: -20px;
+
+	}
+	
+	#under_quote #fb {
+		width: 60px;
+		margin-left: 25px;
+		margin-top: -20px;
+
 	}
 	#score #top{
 		background: url(../images/depression_top_100.png) no-repeat;
@@ -366,3 +386,28 @@
 		text-decoration: underline;
 	}
 /* mash_page END */
+/* view page */
+	/* navigate copied from read_page */
+	#view_page #content #navigate a:hover img{
+		margin-top:40px;
+	}
+	#view_page #content #navigate #left{
+		top: 0;
+		display: inline;
+		position: absolute;
+		left: 50%;
+		margin-left: -100px;
+		margin-top: 130px;
+		clip:rect(40px 48px 80px 0px); 
+	}
+	#view_page #content #navigate #right{
+		top:0;
+		display: inline;
+		position: absolute;
+		right: 50%;
+		margin-right: -100px;
+		margin-top: 130px;
+		clip:rect(40px 48px 80px 0);
+	}
+	
+/* view page END */

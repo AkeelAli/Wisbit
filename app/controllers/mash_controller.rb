@@ -76,9 +76,9 @@ class MashController < ApplicationController
 					q2.matchups+=1
 						
 					if win==1
-						q1.score+=q2.score+1
+						q1.score+=1
 					elsif win==2
-						q2.score+=q1.score+1
+						q2.score+=1
 					end
 						
 					q1.save
@@ -100,10 +100,8 @@ class MashController < ApplicationController
 				session[:id1]=q1.id
 				session[:id2]=q2.id
 
-				@quote1_text=q1.quote
-				@quote2_text=q2.quote
-				@quote1_score=q1.score.to_i
-				@quote2_score=q2.score.to_i
+				@quote1=q1
+				@quote2=q2
 
 
 		

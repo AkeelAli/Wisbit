@@ -20,9 +20,8 @@ class ReadController < ApplicationController
 				#reset
 				@index=0
 			end
-			
-			@quote_text=Quote.find(session[:quote_ids][@index]).quote
-			@quote_score=Quote.find(session[:quote_ids][@index]).score.to_i
+			@quote=Quote.find(session[:quote_ids][@index])
+
 		rescue ActiveRecord::RecordNotFound
 			logger.error "CUSTOM_ERROR: Attempt to access invalid record with category #{params[:category]}"
 			redirect_to root_url, :notice=>'Oops... something went wrong. I\'ll be on it in a second.'
